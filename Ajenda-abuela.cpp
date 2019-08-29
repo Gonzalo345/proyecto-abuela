@@ -1,7 +1,8 @@
 //============================================================================
 // Name        : Program.c
-// Author      : Jorge Gonzalo Cordo Yarvi
-// Version     : 3.0
+// Author      : Gonzalo, Yarvi
+// Version     : 2.0
+// Created on  : August 20, 2019
 // Description : Create an agenda for my grandmother
 // Compiler    : Eclipse IDE
 //============================================================================
@@ -25,12 +26,11 @@ int stringtoInt(string );
 int main (int argc, char** argv)
 {
 	timeControl Time;
-	data *strTask, Task;
+	data Task;
 	string strOption;
 	int option = 0;
 	unsigned int Hour, Min;
 	unsigned int Speed;
-	strTask = &Task;
 
 	taskInit(Task);						// Initialization of tasks
 
@@ -46,7 +46,6 @@ int main (int argc, char** argv)
 	cout << "To see the menu press                  			6" << endl;
 	cout << "To add a new task press                			7" << endl;
 	cout << "To finish press                        			8" << endl << endl;
-
 	while (option !=  8){
 
 		while (!kbhit()) { 													// While no key is pressed
@@ -121,7 +120,8 @@ int main (int argc, char** argv)
 		}
 
 	}
-	delete strTask;
+	Task.delet(Task);
+	//delete Task;
     cout << "Press enter to continue ..." << endl;
     cin >> strOption;
 	return 0;
